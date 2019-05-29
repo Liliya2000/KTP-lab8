@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <link rel="stylesheet" href="{{ STATIC_URL }}article.css">
+
+    <title class='title'>Авторизация</title>
+	
+</head>
+<body>
+	<h1>Вход в учетную запись</h1>
+  <form  method="POST">{% csrf_token %}
+   
+	<input type="text" name="username" placeholder="Имя" value="{{ form.username }}">
+    <input type="text" name="password" placeholder="Пароль" value="{{ form.password }}">
+
+    <input type="submit" value="login" />
+    <!--<input type="hidden" name="next" value="{{ next|escape }}" />-->
+  </form>
+ {{ form.errors }} 
+</body>
+</html>
